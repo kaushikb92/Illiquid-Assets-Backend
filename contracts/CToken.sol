@@ -22,6 +22,12 @@ contract CToken {
         return true; 
     }
 
+    /* Function to reset currency balance of user*/
+    function resetCTokenBalance(address _owner) returns (bool success){
+        balanceOfCT[_owner] = 0;            
+        return true; 
+    }
+
     /* Function to query currency balance by wallet address*/
     function getCTBalance(address _holder) constant returns(uint256){
         uint256 _bal = balanceOfCT[_holder];
